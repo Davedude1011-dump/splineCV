@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+}
+
+/*
+.cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    transition: 0.1s;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    border-radius: 50%;
+    pointer-events: none;
+}
+*/
+
+.splineBG {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+/* from https://codepen.io/lizmaybury/pen/bVOqbb */
+
+.downArrow, .upArrow {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 50%;
+    transform: translate(-50%);
+	bottom: 30%;
+    cursor: pointer;
+	stroke: #ffffff;
+	fill: transparent;
+	stroke-width: 3px;
+}
+.downArrowSVG {
+    animation: downButtonAnimationOut 0.5s forwards;
+}
+.downArrow:hover .downArrowSVG {
+    animation: downButtonAnimationIn 0.5s forwards;
+}
+
+@keyframes downButtonAnimationIn {
+    0% {
+        d: path("M0 0 L20 22 L40 0")
+    }
+    100% {
+        d: path("M20 0 L20 22 L20 0")
+    }
+}
+@keyframes downButtonAnimationOut {
+    0% {
+        d: path("M20 0 L20 22 L20 0")
+    }
+    100% {
+        d: path("M0 0 L20 22 L40 0")
+    }
+}
+
+
+.upArrowSVG {
+    animation: upButtonAnimationOut 0.5s forwards;
+}
+
+.upArrow:hover .upArrowSVG {
+    animation: upButtonAnimationIn 0.5s forwards;
+}
+
+@keyframes upButtonAnimationIn {
+    0% {
+        d: path("M0 50 L20 22 L40 50")
+    }
+    100% {
+        d: path("M20 50 L20 22 L20 50")
+    }
+}
+@keyframes upButtonAnimationOut {
+    0% {
+        d: path("M20 50 L20 22 L20 50")
+    }
+    100% {
+        d: path("M0 50 L20 22 L40 50")
+    }
+}
+
+/* -- */
+
+.background {
+    position: absolute;
+    height: 2000px;
+    width: 100%;
+    top: 100%;
+    background-color: rgb(107, 217, 76);
+}
+
+#area1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(49, 140, 157)
+}
+.area1Box {
+    position: absolute;
+    width: 60%;
+    height: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    background-color: rgb(37, 106, 119);
+    border-radius: 25px;
+    border: 5px solid rgb(26, 73, 83);
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+}
+.area1BoxLeft {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    color: rgb(212, 212, 212);
+}
+.area1BoxLeft:hover {
+    color: white;
+}
+.area1BoxLeftTitle, .area1BoxRightTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2%;
+    font-size: 40px;
+    border-bottom: 4px solid rgb(54, 152, 174);
+    font-family: Mukta;
+}
+@media screen and (orientation: portrait) {
+    .area1BoxLeftTitle, .area1BoxRightTitle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        margin: 2%;
+        font-size: 40px;
+        border-bottom: 4px solid rgb(54, 152, 174);
+        font-family: Mukta;
+    }
+    .area1Box {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
+.area1BoxLeftParagraph {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 2%;
+    font-size: 20px;
+    font-family: Mukta;
+}
+.area1BoxRight {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    color: rgb(212, 212, 212);
+}
+.area1BoxRight:hover {
+    color: white;
+}
+.area1BoxRightHTML {
+    position: absolute;
+    height: 10%;
+    width: 80%;
+    bottom: 55%;
+    margin: 2%;
+}
+.area1BoxRightHTMLBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-image: linear-gradient(90deg, #0077ff 0% 85%, #d5e8ff 85% 100%)
+}
+.area1BoxRightCSS {
+    position: absolute;
+    height: 10%;
+    width: 80%;
+    bottom: 40%;
+    margin: 2%;
+}
+.area1BoxRightCSSBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-image: linear-gradient(90deg, #0078ff 0% 65%, #cde1f8 65% 100%)
+}
+.area1BoxRightJS {
+    position: absolute;
+    height: 10%;
+    width: 80%;
+    margin: 2%;
+    bottom: 25%;
+}
+.area1BoxRightJSBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-image: linear-gradient(90deg, #0078ff 0% 55%, #cde1f8 55% 100%)
+}
+.area1BoxRightPY {
+    position: absolute;
+    height: 10%;
+    width: 80%;
+    margin: 2%;
+    bottom: 10%;
+}
+.area1BoxRightPYBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background-image: linear-gradient(90deg, #0078ff 0% 70%, #cde1f8 70% 100%)
+}
+.area1BoxRightInnerTitle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: white;
+    font-family: Mukta;
+}
+
+#area2 {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(45deg, rgb(0, 204, 255), rgb(255, 171, 185))
+}
+.colorBlur1 {
+    position: absolute;
+    right: 10%;
+    bottom: 5%;
+    height: 500px;
+    width: 500px;
+    background-color: rgb(30, 210, 120);
+    filter: blur(350px);
+}
+.colorBlur2 {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    height: 500px;
+    width: 500px;
+    background-color: rgb(255, 0, 0);
+    filter: blur(350px);
+}
+.area2Box {
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5)
+}
+.area2BoxTitle {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 10%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Mukta;
+    color: white;
+}
+.area2BoxTitleP1 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid white;
+    animation: borderBottomIn 1s forwards;
+}
+.area2BoxTitleP2 {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid white;
+    animation: borderBottomIn 1s forwards;
+}
+@keyframes borderBottomOut {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+@keyframes borderBottomIn {
+    0% {
+        width: 50%;
+    }
+    100% {
+        width: 0;
+    }
+}
+.area2Box:hover .area2BoxTitleP1 {
+    animation: borderBottomOut 2s forwards;
+}
+.area2Box:hover .area2BoxTitleP2 {
+    animation: borderBottomOut 2s forwards;
+}
+.area2BoxBody {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+}
+#area3 {
+    position: absolute;
+    top: 200vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(29, 30, 115);
+}
