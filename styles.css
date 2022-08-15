@@ -6,10 +6,6 @@
     scroll-behavior: smooth;
 }
 
-body {
-    overflow: hidden;
-}
-
 
 .introPhoneTitle, .introPhoneSubTitle {
     display: none;
@@ -55,6 +51,7 @@ body {
         font-size: 120px;
         font-family: Mukta;
         font-weight: bold;
+        animation: rainbowColor 10s linear forwards infinite;
     }
     .introPhoneSubTitle {
         display: block;
@@ -64,6 +61,7 @@ body {
         transform: translate(-50%);
         font-size: 60px;
         font-family: Mukta;
+        animation: rainbowColor 5s linear forwards infinite;
     }
 }
 
@@ -201,11 +199,21 @@ body {
 }
 .area1BoxLeftParagraph {
     position: absolute;
-    bottom: 0;
+    top: 60%;
+    transform: translateY(-50%);
     left: 0;
     margin: 2%;
     font-size: 20px;
     font-family: Mukta;
+}
+@media screen and (orientation: portrait) {
+    .area1Box {
+        width: 75%;
+        height: 65%
+    }
+    .area1BoxLeftParagraph {
+        font-size: 30px;
+    }
 }
 .area1BoxRight {
     position: absolute;
@@ -391,4 +399,170 @@ body {
     height: 100vh;
     width: 100%;
     background-color: rgb(29, 30, 115);
+}
+#twitterCircle, #facebookCircle, #instagramCircle, #pinterestCircle, #linkedinCircle {
+    animation: rainbow 15s linear forwards infinite;
+}
+@keyframes rainbow {
+    100%,0%{
+        fill: rgb(255,0,0);
+    }
+    8%{
+        fill: rgb(255,127,0);
+    }
+    16%{
+        fill: rgb(255,255,0);
+    }
+    25%{
+        fill: rgb(127,255,0);
+    }
+    33%{
+        fill: rgb(0,255,0);
+    }
+    41%{
+        fill: rgb(0,255,127);
+    }
+    50%{
+        fill: rgb(0,255,255);
+    }
+    58%{
+        fill: rgb(0,127,255);
+    }
+    66%{
+        fill: rgb(0,0,255);
+    }
+    75%{
+        fill: rgb(127,0,255);
+    }
+    83%{
+        fill: rgb(255,0,255);
+    }
+    91%{
+        fill: rgb(255,0,127);
+    }
+}
+@keyframes rainbowColor {
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}
+.centerSVG {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.discordTab {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 3%;
+    height: 60%;
+    width: 30%;
+    background-color: #3561ff1a;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(21, 0, 255, 0.5)
+}
+.discordLogo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 3%;
+    height: 60px;
+    width: 60px;
+    fill: #5865F2;
+    border: 2px solid #5865F2;
+    padding: 10px;
+    border-radius: 50%;
+}
+.discordTab:hover .discordLogo {
+    animation: spin 0.5s forwards;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.discordButton {
+    position: absolute;
+    width: 30%;
+    height: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10%;
+    border-radius: 10px;
+    background-color: #58a2f2;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Montserrat,sans-serif;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0)
+}
+.discordButton:hover {
+    animation: enlarge 1s forwards;
+}
+@keyframes enlarge {
+    from {
+        width: 30%;
+        height: 10%;
+        color: rgba(255, 255, 255, 0)
+    }
+    to {
+        width: 40%;
+        height: 5%;
+        font-size: 20px;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, 100)
+    }
+}
+@media screen and (orientation: portrait) {
+    .discordTab {
+        height: 50%;
+        width: 50%;
+        top: 100%;
+        transform: translateY(-110%);
+    }
+    .discordButton {
+        animation: enlarge 1s forwards;
+    }
 }
