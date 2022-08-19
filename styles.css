@@ -4,28 +4,14 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    cursor: none;
+    overflow: hidden;
 }
 
 
 .introPhoneTitle, .introPhoneSubTitle {
     display: none;
-    }
-
-/*
-.cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    box-sizing: border-box;
-    transition: 0.1s;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 3px solid black;
-    border-radius: 50%;
-    pointer-events: none;
 }
-*/
 
 .splineBG {
     position: absolute;
@@ -74,7 +60,7 @@
 	left: 50%;
     transform: translate(-50%);
 	bottom: 30%;
-    cursor: pointer;
+    ;
 	stroke: #ffffff;
 	fill: transparent;
 	stroke-width: 3px;
@@ -310,8 +296,10 @@
     width: 500px;
     background-color: rgb(30, 210, 120);
     filter: blur(350px);
+    pointer-events: none;
 }
 .colorBlur2 {
+    pointer-events: none;
     position: absolute;
     left: 20%;
     top: 15%;
@@ -535,7 +523,7 @@
     font-size: 30px;
     font-weight: bold;
     font-family: Montserrat,sans-serif;
-    cursor: pointer;
+    ;
     color: rgba(255, 255, 255, 0)
 }
 .discordButton:hover {
@@ -564,5 +552,34 @@
     }
     .discordButton {
         animation: enlarge 1s forwards;
+    }
+}
+
+.mouse {
+    pointer-events: none;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: GrowShrink 5s forwards infinite;
+}
+
+@keyframes GrowShrink {
+    0% {
+        height: 120px;
+        width: 120px;
+    }
+    
+    50% {
+        height: 40px;
+        width: 40px;
+    }
+
+    100% {
+        height: 120px;
+        width: 120px;
     }
 }
